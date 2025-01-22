@@ -1,5 +1,5 @@
 # Spider-Inspired-Soft-Jumping-Actuator
-
+[![DOI](https://zenodo.org/badge/914908372.svg)](https://doi.org/10.5281/zenodo.14717689)
 Data and other relevant files for the paper Spider-Inspired Soft Jumping Actuator (JUMPER). The pdf link to the paper will be referenced [here] when available. 
 
 File Descriptions 
