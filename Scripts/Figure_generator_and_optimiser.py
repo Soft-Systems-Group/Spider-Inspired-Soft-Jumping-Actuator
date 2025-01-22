@@ -17,18 +17,26 @@ from sklearn.preprocessing import MinMaxScaler
 from matplotlib.ticker import FormatStrFormatter
 from matplotlib.ticker import MaxNLocator
 
-# comment for nice styling
+# comment for nice plot styling
 matplotlib.style.use(['science', 'nature'])
 
-spring_data_file = 'C:\\Users\\pandora\\OneDrive - University of Edinburgh\\PhD\\SpiderPump\\Spring tests\\Full profile\\output_14.csv'
-speed_data_file =  'C:\\Users\\pandora\\OneDrive - University of Edinburgh\\PhD\\SpiderPump\\speed tests\\output_2.csv'
-diameter_data_file = 'C:\\Users\\pandora\\OneDrive - University of Edinburgh\\PhD\\SpiderPump\\Diameter tests\\output1.csv' 
+# INSERT PATH TO DATA FILES HERE 
+spring_data_file = ''
+speed_data_file =  ''
+diameter_data_file = '' 
+# ------------
+
 pressures = [0,0.5 * 100000, 0.75 * 100000,1.00 * 100000,1.25 * 100000,1.50 * 100000] # convert to pa
 diameters = [16,20,24,28]
 materials = [63,70,82]
 rs = [d / 2000 for d in diameters]  # convert to m 
 L = 50 / 1000
-spring_data = pd.read_csv(spring_data_file)
+try:
+    spring_data = pd.read_csv(spring_data_file)
+except:
+    print("FILE PATHS ABOVE LIKELY INCORRECTLY SET")
+    raise SystemExit
+
 spring_data['Diameter'] = spring_data['Diameter'].replace(25,24)
 speed_data = pd.read_csv(speed_data_file)
 speed_data['Diameter'] = speed_data['Diameter'].replace(25,24)
